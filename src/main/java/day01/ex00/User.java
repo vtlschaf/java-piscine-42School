@@ -12,33 +12,30 @@ public class User {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public String getUsername() {
         return username;
     }
-
     public void setUsername(String username) {
         this.username = username;
     }
-
     public double getBalance() {
         return balance;
     }
-
     public void setBalance(double balance) {
         this.balance = balance;
     }
-
     public User(String username, double balance) {
         this.id = ID++;
         this.username = username;
-       this.balance = balance;
+        if(balance >= 0) this.balance = balance;
+        else {
+            this.balance = 0;
+            System.out.println("Balance is negative");
+        }
     }
-
     @Override
     public String toString() {
         return "User:  "

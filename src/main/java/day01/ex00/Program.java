@@ -15,14 +15,16 @@ public class Program {
     public static void main(String[] args) {
         UUID Uuid = UUID.randomUUID();
         Scanner sc = new Scanner(System.in);
-        User user1 = new User("John P.", 100.00);
+        User user1 = new User("John P.", -100.00);
         User user2 = new User("Mike B.", 200.00);
-
-        Transaction transaction1 = new Transaction(Uuid.toString() ,user1 , user2 ,"IN", 50); // recipient, sender, category, amount
-        checkTransaction(transaction1);
         System.out.println(user1);
         System.out.println(user2);
+        Transaction transaction1 = new Transaction(Uuid.toString() ,user1 , user2 ,"IN", 50); // recipient, sender, category, amount
+        System.out.println(checkTransaction(transaction1));
         System.out.println(transaction1);
+        if(checkTransaction(transaction1)){
+            goTransaction(transaction1);
+        }
     }
 
     public static boolean checkTransaction(Transaction transaction) {
@@ -35,5 +37,9 @@ public class Program {
             else result = false;
         }
         return result;
+    }
+
+    public static void goTransaction(Transaction transaction) {
+
     }
 }

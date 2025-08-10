@@ -25,47 +25,36 @@ public class Transaction {
         this.category = category;
         this.amount = amount;
     }
-
     public User getRecipient() {
         return recipient;
     }
-
     public void setRecipient(User recipient) {
         this.recipient = recipient;
     }
-
     public User getSender() {
         return sender;
     }
-
     public void setSender(User sender) {
         this.sender = sender;
     }
-
     public String getCategory() {
         return category;
     }
-
     public void setCategory(String category) {
         this.category = category;
     }
-
     public double getAmount() {
         return amount;
     }
-
     public void setAmount(double amount) {
         this.amount = amount;
     }
-
     public String getUuid() {
         return uuid;
     }
-
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
-
     @Override
     public String toString() {
         return "Trans.:"
