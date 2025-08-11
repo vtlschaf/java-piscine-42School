@@ -1,4 +1,7 @@
-package day01.ex00;
+package day01.ex01;
+
+import day01.ex00.Transaction;
+import day01.ex00.User;
 
 // Обеспечить проверку начального баланса для User'a (он не может быть отрицательным)
 // исходящая транзакция (только отрицательная сумма)
@@ -11,8 +14,8 @@ package day01.ex00;
 public class Program {
     public static void main(String[] args) {
 //        UUID Uuid = UUID.randomUUID(); // неправильно, нужно генерировать при каждом создании объекта
-        User user1 = new User("John P.", -100.00);
-        User user2 = new User("Mike B.", 200.00);
+        day01.ex00.User user1 = new day01.ex00.User("John P.", -100.00);
+        day01.ex00.User user2 = new User("Mike B.", 200.00);
         System.out.println(user1);
         System.out.println(user2);
         Transaction transaction1 = new Transaction(user1 , user2 ,"IN", 50); // recipient, sender, category, amount

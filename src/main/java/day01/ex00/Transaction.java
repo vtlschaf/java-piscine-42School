@@ -1,5 +1,7 @@
 package day01.ex00;
 
+import java.util.UUID;
+
 public class Transaction {
     // Описывает денежный перевод между двумя пользователями.
     // Определить уникальный идентификатор как строку вида UUID.
@@ -12,14 +14,13 @@ public class Transaction {
     // Категория перевода (приход, расход)
     // Сумма перевода
 
-    private String uuid;
-    private User recipient;
+    private UUID uuid = UUID.randomUUID(); // объект UUID
+    private User recipient; //
     private User sender;
     private String category;
     private double amount;
 
-    public Transaction(String uuid,User recipient, User sender, String category, double amount) {
-        this.uuid = uuid;
+    public Transaction(User recipient, User sender, String category, double amount) {
         this.recipient = recipient;
         this.sender = sender;
         this.category = category;
@@ -49,10 +50,10 @@ public class Transaction {
     public void setAmount(double amount) {
         this.amount = amount;
     }
-    public String getUuid() {
+    public UUID getUuid() {
         return uuid;
     }
-    public void setUuid(String uuid) {
+    public void setUuid(UUID uuid) {
         this.uuid = uuid;
     }
     @Override
